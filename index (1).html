@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="ryneir.jpg" type="image/x-icon">
+  <title>Ryneir Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #0b0b0c;
+    color: #e7e7e7;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 720px;
+    padding: 60px 20px;
+}
+
+/* Profile */
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;   /* This is the key fix */
+    object-position: center; /* Keeps the face centered */
+    margin-bottom: 20px;
+}
+
+.profile p {
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+/* Section title */
+.section-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #9ca3af;
+    margin-bottom: 6px;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* PROJECTS GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* CARD AS LINK */
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1f1f22;
+  position: relative;
+  cursor: pointer;
+  height: 180px;
+
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.featured {
+  border: 2px solid #ef4444;
+}
+
+/* badge */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ef4444;
+  color: white;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* bottom overlay */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 12px;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.card-title {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.card:hover .card-title {
+  color: #ef4444;
+  transition: 0.2s ease;
+}
+
+/* CONTACT */
+.contact-card {
+  border: 1px solid #1f1f22;
+  border-radius: 14px;
+  padding: 20px;
+  background: #111113;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1f1f22;
+  background: #0f0f10;
+  color: #e7e7e7;
+  outline: none;
+}
+
+.contact-form input:focus {
+  border-color: #ef4444;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #3a3737;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #1f1f22;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+/* socials */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #1f1f22;
+  border-radius: 10px;
+
+  color: #9ca3af;
+  font-size: 16px;
+
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  transform: translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Profile -->
+    <div class="profile">
+      <img src="ryneir.jpg" alt="Profile" />
+      <p>
+        Hi, I am Ryneir, an aspiring web developer. I am currently studying at Cordova Public College focusing on developing simple and modern websites using HTML and CSS.
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div>
+      <div class="section-title">SKILLS</div>
+      <div class="skills">
+        <div class="skill-box">
+          <h3>HTML</h3>
+          <p>Semantic structure, forms, layouts, and clean markup.</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>CSS</h3>
+          <p>Flexbox, responsive design, styling, and basic animations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div>
+      <div class="section-title" style="margin-top: 40px;">PROJECTS</div>
+
+      <div class="projects-grid">
+
+        <a href="https://purposivecommunicationpresentation.netlify.app/" target="_blank" class="card featured">
+          <img src="purposive.png" />
+          <div class="badge">Featured</div>
+          <div class="card-overlay">
+            <div class="card-title">Blog</div>
+          </div>
+        </a>
+
+        <a href="https://pablonavarrete.netlify.app/" target="_blank" class="card">
+          <img src="classsched.png" />
+          <div class="card-overlay">
+            <div class="card-title">Class Schedule</div>
+          </div>
+        </a>
+
+        <a href="https://macanpablo.netlify.app/" target="_blank" class="card">
+          <img src="jedpabs.png" />
+          <div class="card-overlay">
+            <div class="card-title">Mini Website</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <div class="section-title" style="margin-top: 40px;">CONTACT</div>
+
+      <div class="contact-card">
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <button type="submit">Message Me</button>
+        </form>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <div class="socials">
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
